@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+
 
 export default class Todo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null,
+            completed: false
+
+        };
+    }
     render() {
         return (
-            <div>Todo!</div>
+            <div className="todo-individual">{this.state.value}<span>{this.state.completed? ">" : "X"}</span></div>
         );
     }
 }
