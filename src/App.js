@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { createStore } from 'redux';
+import todolist from '/redux';
 import logo from './logo.svg';
 import './App.css';
 import Todos from './app/components/Todos';
+
+
+const store = createStore(todolist);
 
 class App extends Component {
   render() {
@@ -15,7 +20,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
           
         </p>
-        <Todos />
+        <Todos value={store.getState()}/>
       </div>
     );
   }
